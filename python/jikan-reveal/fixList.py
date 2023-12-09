@@ -1,11 +1,13 @@
 import requests
 
+
+# Goes through array addresses generates the fix address per each unique address.
+
 def fill_and_send_requests(addresses):
     base_url = "https://jikan-server-production.up.railway.app/fixReveal?nft="
 
     for address in addresses:
         url = base_url + address    
-        print(url)
         response = requests.get(url)
 
         if response.status_code == 200:
